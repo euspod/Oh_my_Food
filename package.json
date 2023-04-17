@@ -1,0 +1,15 @@
+{
+  "name": "oh_my_food",
+  "version": "1.0.0",
+  "description": "Améliorer l'interface d'un site mobile avec des animations Css.",
+  "main": "index.js",
+  "scripts": {
+    "sass":"sass --watch ./sass/main.scss:./assets/css/style.css --style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Oh_my_Food"
+  },
+  "author": "euspod",
+  "license": "ISC"
+}
