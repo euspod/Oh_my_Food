@@ -1,104 +1,68 @@
 
-//  ** general **
-$background-color-op: #F6F6F6;
-// cartes fonctionnement
-$background-color-loc :#EAEAEA;
-//  location
-$background-color-foot: #353535;
-// footer
-$dot-color:#9356DC;
-// couleur pastille
-$op-icon-color:#7E7E7E;
-// couleur icones op
-$font-family-shrikhand: 'Shrikhand', cursive;
-$font-family-roboto: 'Roboto', sans-serif;
-$bg-color: rgb(41, 41, 41);
-
-body {
-  font-family: $font-family-roboto;
-  color:rgb(0, 0, 0);
-}
+@import "./base/typography";
+@import"./utils/variables";
+@import"./utils/mixins";
  
-a {
-  text-decoration: none;
-}
 
 .main-container {
   max-width: 320px;
-  background-color: $bg-color;
   margin: auto;
 }
 
-h1 {
-  font-size:1.5em;
-}
-
-h2 {
-  padding-left: 20px;
-  font-size:1.35em;
-}
- h3 {
-  font-size: 1em;
-  margin:0;
- }
-
-// **header**
-
-.logo-container {
-  width:100%;
-  height:50px;
-  background-color: white;
-  filter:drop-shadow(0 1px 2px rgb(170, 170, 170));
-  position: relative;
-}
-.header-logo {
-  width:150px;
-  height:auto;
-  object-fit: cover;
-  position: absolute;
-  bottom:10px;
-  left: 0; 
-  right: 0; 
-  margin-left: auto; 
-  margin-right: auto; 
-}
 .header {
   text-align: center;
 }
 
-// **header location**
-
-.header-location {
-  background-color: $background-color-loc;
+.header_logo-container {
+  width:100%;
+  height:50px;
+  background-color: $bg-white;
+  filter:drop-shadow(0 1px 2px rgb(170, 170, 170));
+  @include flex(flex,center,null,null);
+}
+.header_logo {
+  height:25px;
+  object-fit: contain;
+}
+.location {
+  background-color: $bg-grey;
   height:50px;
   font-size: 14px;
   font-weight: 900;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color:$background-color-foot;
+  @include flex(flex,center,center,row);
+  color:$color-dark-grey;
 }
-
-.location-icon {
+.location_icon {
   padding-right: 10px;
 }
-
-.location-text {
+.location_text {
   line-height: 50px;
 }
+  
+
+// **header**
+
+
+
+
+
+// **header location**
+
+
+
 
 // **nav section**
 
-.nav-section {
+.nav {
   padding-bottom: 50px;
-  background-color: $background-color-op;
+  background-color: $bg-light-grey;
 }
-.nav-title {
+.nav_heading {
   font-weight: 700;
   margin-top:0;
   padding-top:15px;
 }
-.nav-button{
+.nav_button{
   margin:auto;
   background: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 100%);
   border-radius: 20px;
@@ -107,13 +71,13 @@ h2 {
   filter: drop-shadow(0px 4px 5px #b1b1b1);
 }
 
-.nav-text {
+.nav_text {
   color:rgb(146, 146, 146);
   font-size: 1em;
   font-weight: 300;
 }
 
-.nav-button a {
+.nav_button a {
   color:rgb(255, 255, 255);
   line-height: 45px;
 }
@@ -121,38 +85,34 @@ h2 {
 // **operation**
 
 .operation {
-  background-color: white;
+  background-color: $bg-white;
   padding-top:25px;
   padding-bottom: 15px;
 }
 
-.operation-card-container {
-  display:flex;
-  flex-direction: column;
+.operation_cards {
+  @include flex(flex,null,null,column);
   gap:20px;
   padding-bottom: 50px;
 }
-.operation-card {
+.operation_card {
   margin:auto;
-  background-color: $background-color-op;
+  background-color: $bg-light-grey;
   border-radius: 20px;
-  width:285px;
+  width:258px;
   height:65px;
   filter: drop-shadow(0px 4px 4px #dddddd);
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items:center;
+  @include flex(flex,null,center,row);
   padding-left: 30px;
 }
-.operation-icon {
+.operation_icon {
   padding-right: 19px;
-  color:$op-icon-color;
+  color:$icon-color;
   font-size: 1.2em;
   margin-bottom: 5px;
 }
 
-.dot {
+.operation_dot {
   border-radius: 10px;
   width:20px;
   height: 20px;
@@ -165,138 +125,128 @@ h2 {
   font-size:0.8em;
  }
 
-
-.operation .section-title {
-  font-size:15px;
-}
-
-
 // **restaurants**
 
 .restaurants {
-  background-color: $background-color-op;
+  background-color: $bg-light-grey;
   padding-top:25px;
   color:black;
+
+  .restaurants_cards {
+    padding-bottom: 50px;
+    @include flex(flex,center,null,column);
+    width: 90%;
+    margin: auto;
+    gap:20px;
+  }
+  .restaurants_card {
+    background-color:$bg-white;
+    border-radius: 20px;
+    position: relative;
+  }
+  .card-thumb {
+    border-radius: 15px 15px 0 0;
+    width:100%;
+    height: 145px;
+    object-fit:cover;
+  }
+  .card-content {
+    @include flex(flex,null,null,row);
+  }
+  .card-text {
+    flex-direction: column;
+    width:80%;
+    padding-left:15px;
+    gap:2px;
+  }
+  .section-title::first-letter{
+    margin-bottom: 0px;
+    padding-top:15px;
+    text-transform: capitalize;
+  }
+  .card-paragraph {
+    margin-top:0;
+    font-weight: 300;
+  }
+  .heart-icon-border {
+    font-size: 1.35em;
+    color:rgb(0, 0, 0);
+    width:20%;
+    @include padding(20px,auto,auto,20px);
+  }
+  
+  .heart-icon-solid {
+    position:absolute;
+    font-size: 1em;
+    color:rgb(255, 255, 255);
+    display:none;
+  }
+  
+  .label-new {
+    background-color: #99E2D0;
+    width:69px;
+    height:25px;
+    border-radius: 2px;
+    position: absolute;
+    top:10px;
+    right: 10px;
+    color:#008766;
+    font-size: 0.75em;
+    font-weight: 700;
+    display:table-cell;
+    text-align: center;
+    line-height:26px;
+    filter: drop-shadow(0px 4px 4px #646464);
+  }
 }
 
-.restaurant-card-container {
-  padding-bottom: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 90%;
-  margin: auto;
-  gap:20px;
-}
 
-.restaurant-card {
-  background-color:white;
-  border-radius: 20px;
-  position: relative;
-}
 
-.card-thumb {
-  border-radius: 15px 15px 0 0;
-  width:100%;
-  height: 145px;
-  object-fit:cover;
-}
 
-.card-content {
-  display: flex;
-  flex-direction: row;
-}
 
-.card-text {
-  flex-direction: column;
-  width:80%;
-  padding-left:15px;
-  gap:2px;
-}
 
-.card-text .section-title {
-  margin-bottom: 0px;
-}
-.card-text .card-paragraph {
-  margin-top:5px;
-  font-weight: 300;
-}
 
-.heart-icon-border {
-  font-size: 1.35em;
-  color:rgb(0, 0, 0);
-  width:20%;
-  padding-top: 20px;
-  padding-left:20px;
-}
-
-.heart-icon-solid {
-  position:absolute;
-  font-size: 1em;
-  color:rgb(255, 255, 255);
-  display:none;
-}
-
-.label-new {
-  background-color: #99E2D0;
-  width:69px;
-  height:25px;
-  border-radius: 2px;
-  position: absolute;
-  top:10px;
-  right: 10px;
-  color:#008766;
-  font-size: 0.75em;
-  font-weight: 700;
-  display:table-cell;
-  text-align: center;
-  line-height:26px;
-}
 
 // **footer**
 
-.footer-content {
-  padding-left:20px;
-  display: flex;
-  flex-direction:column;
-  gap:10px;
-  padding-bottom: 24px;
-  background-color: $background-color-foot;
+footer {
+  @include padding(auto,auto,24px,20px);
+  background-color: $bg-dark-grey;
+    a {
+      color: white;
+      font-style:normal;
+    }
 }
 
-.footer-title {
-  font-family: $font-family-shrikhand;
+.footer_heading {
   font-size: 1.1em;
-  margin-bottom: 1px;
+  margin:0;
+  @include padding(15px,auto,10px,0);
   color: #ffffff;
-  padding-left: 0;
+  font-weight: 100;
+}
+.links-container {
+  @include flex(flex,null,null,column);
+  gap:10px;
 }
 
-.footer-content a {
-  color: white;
-  font-style:normal;
-}
-
-.footer-icon-links {
-  font-size:1.1em;
-  display: grid;
-  grid-template-columns: 1fr 13fr;
-}
-
-.footer-icon-links p {
+.footer_links p {
   margin:0;
   font-weight: 400;
 }
 
-.footer-iconless-links {
+.footer_links {
   font-size: 1em;
   font-weight: 400;
-  display: grid;
-  grid-template-columns: 1fr;
+  display:flex;
+  flex-direction: row;
+
 }
-.footer-icons {
+.footer_icons {
   font-size: 0.7em;
   line-height: 20px;
+  width: 21px;
+  height:21px;
 }
 
 

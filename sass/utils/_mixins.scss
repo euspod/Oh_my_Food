@@ -1,0 +1,13 @@
+@mixin flex($disp:flex,$j-c:center,$a-i:center,$f-d:row) {
+    display:$disp;
+    justify-content: $j-c;
+    align-items: $a-i;
+    flex-direction:$f-d;
+  }
+
+@mixin padding($pt:auto,$pr:auto,$pb:auto,$pl:auto) {
+    padding-top: $pt;
+    padding-right: $pr;
+    padding-bottom: $pb;
+    padding-left: $pl;
+}
