@@ -1,0 +1,65 @@
+.header {
+    text-align: center;
+
+    .header_logo-container {
+        width:100%;
+        height:50px;
+        background-color: $bg-white;
+        filter: drop-shadow(0px 4px 2px rgb(194, 194, 194));
+        @include flex(flex,center,null,null);
+        position: relative;
+      }
+    .header_logo {
+        height:25px;
+        object-fit: contain;
+        position:absolute;
+        bottom:10px;
+      }
+  }
+
+.location {
+  background-color: $bg-grey;
+  height:50px;
+  @include flex(flex,center,center,row);
+  color:$typo-tertry-color;
+
+  .location_icon {
+      padding-right: 10px;
+    }
+    .location_text {
+    line-height: 50px;
+    }
+
+}
+ 
+
+
+.nav {
+  padding-bottom: 50px;
+  background-color: $bg-light-grey;
+  
+  .nav_heading {
+      margin-top:0;
+      padding-top:15px;
+    }
+    .nav_button{
+      margin:auto;
+      background: linear-gradient(0deg, $primary-color  0%, $secondary-color 100%);
+      border-radius: 20px;
+      width:200px;
+      height:45px;
+      filter: drop-shadow(0px 4px 5px #b1b1b1);
+    }
+    .nav_text {
+      color:rgb(146, 146, 146);
+
+    }
+    .nav_button a {
+      line-height: 45px;
+    }
+}
+
+
+  
+
+  

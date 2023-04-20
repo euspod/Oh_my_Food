@@ -1,25 +1,73 @@
-h1 {
-  font-size:1.4em;
-  padding-top: 20px;
-}
-
-h2 {
-  padding-left: 20px;
-  font-size:1.35em;
-}
-
-h3 {
-  font-size: 1em;
-  margin:0;
+body {
+ font-family: 'Roboto', sans-serif;
+ h1 {
+   font-size:1.4em;
+   padding-top: 20px;
+ }
+ h2 {
+   padding-left: 20px;
+   font-size:1.35em;
  }
 
- body {
-  font-family: 'Roboto', sans-serif;
- }
- a {
-  text-decoration: none;
+ h3 {
+   font-size: 1em;
+   margin:0;
+  }
+  a {
+   font-style:normal;
+  }
 }
 
 .footer_heading {
   font-family: 'Shrikhand', cursive;
+  .nav_heading {
+    font-weight: 700;
+  .nav_text {
+    font-size: 1em;
+    font-weight: 300;
+  }
+  }
 }
+
+.restaurants {
+  .section-title::first-letter {
+    text-transform: capitalize;
+  }
+  .card-paragraph {
+    font-weight:300;
+  }
+  .heart-icon-border, .heart-icon-solid {
+    font-size: 1.35em;
+   
+  }
+  .label-new {
+    font-size: 0.75em;
+    font-weight: 700;
+  }
+
+}
+
+.operation_icon {
+  font-size: 1.2em;
+  .operation_dot {
+    font-size:0.8em;
+  }
+}
+
+.footer_heading {
+  font-size: 1.1em;
+  font-weight: 100;
+  .footer_links {
+    font-size: 1em;
+    font-weight: 400;
+  }
+  .footer_icons {
+    font-size: 0.7em;
+  }
+}
+
+
+
+
+
+
