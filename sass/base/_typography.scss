@@ -1,70 +1,127 @@
+@import "../utils/mixins";
+
 body {
  font-family: 'Roboto', sans-serif;
- h1 {
-   font-size:1.4em;
-   padding-top: 20px;
- }
- h2 {
-   padding-left: 20px;
-   font-size:1.35em;
- }
-
- h3 {
-   font-size: 1em;
-   margin:0;
-  }
   a {
    font-style:normal;
   }
 }
 
-.footer_heading {
-  font-family: 'Shrikhand', cursive;
-  .nav_heading {
-    font-weight: 700;
-  .nav_text {
+.header{
+  &__nav-heading {
+    font-size: 1.4em;
+    padding-top: 20px;
+    @include media-q(desktop) {
+    font-size: 1.7em;
+     margin-bottom: 10px;
+   }
+   }
+  &__location-text, &__location-icon {
+    font-size:1em;
+    @include media-q(desktop) {
+      font-size: 0.8em;
+    }
+   }
+  &__nav-text {
     font-size: 1em;
-    font-weight: 300;
+    @include media-q(desktop){
+      font-size:0.8em;
+      margin-bottom: 15px;
+    }
   }
+  &__nav-button a {
+    font-size: 0.9em;
+   }
+}
+
+
+.operation {
+  &__heading {
+    font-size: 1.4em;
+    @include media-q(desktop){
+      font-size: 1em;}
   }
+  &__card-title {
+   font-size: 0.9em;
+   @include media-q(desktop) {
+    font-size: 0.7em;
+   }
+  }
+  &__icon {
+    font-size: 1em;
+  }
+  &__dot {
+    font-size: 0.8em;
+  }
+  
 }
 
 .restaurants {
-  .section-title::first-letter {
+  &__heading {
+    font-size:1.4em;
+    @include media-q(desktop) {
+      font-size: 1em;
+     }
+  }
+  &__card-heading {
+    font-size: 1em;
+    @include media-q(desktop) {
+      font-size: 0.9em;
+     }
+  }
+  &__card-heading::first-letter {
     text-transform: capitalize;
   }
-  .card-paragraph {
+  &__card-paragraph {
     font-weight:300;
+    font-size:1em;
+    @include media-q(desktop) {
+      font-size: 0.9em;
+     }
   }
-  .heart-icon-border, .heart-icon-solid {
+  &__heart-icon-border, &__heart-icon-solid {
     font-size: 1.35em;
-   
+    
   }
-  .label-new {
+  &__label-new {
     font-size: 0.75em;
     font-weight: 700;
   }
-
+  
 }
 
-.operation_icon {
-  font-size: 1.2em;
-  .operation_dot {
-    font-size:0.8em;
-  }
-}
-
-.footer_heading {
+.footer {
+  &__heading {
+  font-family: 'Shrikhand', cursive;
   font-size: 1.1em;
   font-weight: 100;
-  .footer_links {
-    font-size: 1em;
-    font-weight: 400;
+  @include media-q(desktop) {
+    font-size: 0.8em;
+    }
+    }
+  &__nav_heading {
+    font-weight: 700;
   }
-  .footer_icons {
+  &__nav_text {
+    font-size: 1em;
+    font-weight: 300;
+  }
+  &__links {
+    font-size: 0.9em;
+    font-weight: 400;
+    @include media-q(desktop) {
+      font-size: 0.8em;
+      }
+  }
+  &__icons {
     font-size: 0.7em;
+    @include media-q(desktop) {
+      font-size: 0.7em;
+      }
   }
 }
+
+
 
 
 

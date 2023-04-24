@@ -1,29 +1,65 @@
-footer {
+.footer {
+    display: flex;
+    flex-direction: column;
     @include padding(auto,auto,24px,20px);
     background-color: $bg-dark-grey;
-  
-    .footer_heading {
+    @include media-q(desktop){
+      align-content: flex-end;
+      @include flex(flex,flex-start,center,row-reverse);
+      height:70px;
+      flex-wrap: wrap;
+      gap:15px;
+    }
+    &__heading {
       margin:0;
       @include padding(15px,auto,10px,0);
       color: #ffffff;
+      @include media-q(desktop) {
+        margin-left: 10px;
+        margin-right: 40px;
+        margin-bottom: 10px;
+        @include padding(0,0,0,0);
+        }
     }
-    .links-container {
-      @include flex(flex,null,null,column);
+    &__links-container {
       gap:10px;
+      @include flex(flex,null,null,column);
+      @include media-q(desktop) {
+        @include flex(flex,null,center,row);
+        }
     }
-    .footer_links p {
+    &__links p, &__links-iconless a {
       margin:0;
+      margin-right: 5px;
+      margin-bottom: 10px;
+      @include media-q(desktop){
+        margin-bottom: 10px;
+      }
     }
-    .footer_links {
-      font-size: 1em;
-      font-weight: 400;
-      display:flex;
-      flex-direction: row;
-    
+    &__links{
+      @include flex(flex,null,null,row);
+      @include media-q(desktop){
+        margin: 0;
+        flex-direction: row;
+      }
     }
-    .footer_icons {
-      line-height: 20px;
-      width: 21px;
-      height:21px;
+    &__links-icon ,&__links-iconless {
+      @include flex(flex,null,null,column);
+      @include media-q (desktop) {
+        flex-direction: row;
+        margin-right: 5px;
+        }
+    }
+    &__links-iconless {
+      margin-top:-10px;
+      @include media-q (desktop) {
+      margin-top:0px;
+     }}
+    &__icons {
+      line-height: 17px;
+      width: 16px;
+      @include media-q(desktop) {
+        line-height: 18px;
+        }
     }
   }
