@@ -11,20 +11,20 @@ body {
   &__nav-heading {
     font-size: 1.4em;
     padding-top: 20px;
-    @include media-q(desktop) {
+    @include media-q(medium-devices) {
     font-size: 1.7em;
      margin-bottom: 10px;
    }
    }
   &__location-text, &__location-icon {
     font-size:1em;
-    @include media-q(desktop) {
+    @include media-q(medium-devices) {
       font-size: 0.8em;
     }
    }
   &__nav-text {
     font-size: 1em;
-    @include media-q(desktop){
+    @include media-q(medium-devices){
       font-size:0.8em;
       margin-bottom: 15px;
     }
@@ -38,34 +38,33 @@ body {
 .operation {
   &__heading {
     font-size: 1.4em;
-    @include media-q(desktop){
+    @include media-q(medium-devices){
       font-size: 1em;}
   }
-  &__card-title {
-   font-size: 0.9em;
-   @include media-q(desktop) {
-    font-size: 0.7em;
+  &__card-title, &__icon {
+   font-size: 1em;
+   @include media-q(medium-devices) {
+    font-size: 0.8em;
    }
-  }
-  &__icon {
-    font-size: 1em;
   }
   &__dot {
     font-size: 0.8em;
+    @include media-q(medium-devices) {
+     font-size: 0.7em;
+    }
   }
-  
 }
 
 .restaurants {
   &__heading {
     font-size:1.4em;
-    @include media-q(desktop) {
+    @include media-q(medium-devices) {
       font-size: 1em;
      }
   }
   &__card-heading {
     font-size: 1em;
-    @include media-q(desktop) {
+    @include media-q(medium-devices) {
       font-size: 0.9em;
      }
   }
@@ -75,7 +74,7 @@ body {
   &__card-paragraph {
     font-weight:300;
     font-size:1em;
-    @include media-q(desktop) {
+    @include media-q(medium-devices) {
       font-size: 0.9em;
      }
   }
@@ -95,7 +94,7 @@ body {
   font-family: 'Shrikhand', cursive;
   font-size: 1.1em;
   font-weight: 100;
-  @include media-q(desktop) {
+  @include media-q(medium-devices) {
     font-size: 0.8em;
     }
     }
@@ -109,13 +108,13 @@ body {
   &__links {
     font-size: 0.9em;
     font-weight: 400;
-    @include media-q(desktop) {
+    @include media-q(medium-devices) {
       font-size: 0.8em;
       }
   }
   &__icons {
     font-size: 0.7em;
-    @include media-q(desktop) {
+    @include media-q(medium-devices) {
       font-size: 0.7em;
       }
   }

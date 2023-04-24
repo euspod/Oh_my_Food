@@ -14,8 +14,8 @@
 
 @mixin media-q($size) {
   @if $size == medium-devices {
-    @media (min-width: 768px) { @content; } 
+    @media (min-width: 767px) { @content; } 
   } @else if $size == desktop {
-    @media (min-width:1024px) { @content;}
+    @media (min-width:1023px) { @content;}
   }
 }

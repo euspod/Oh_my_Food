@@ -3,7 +3,7 @@
     flex-direction: column;
     @include padding(auto,auto,24px,20px);
     background-color: $bg-dark-grey;
-    @include media-q(desktop){
+    @include media-q(medium-devices){
       align-content: flex-end;
       @include flex(flex,flex-start,center,row-reverse);
       height:70px;
@@ -14,7 +14,7 @@
       margin:0;
       @include padding(15px,auto,10px,0);
       color: #ffffff;
-      @include media-q(desktop) {
+      @include media-q(medium-devices) {
         margin-left: 10px;
         margin-right: 40px;
         margin-bottom: 10px;
@@ -24,7 +24,7 @@
     &__links-container {
       gap:10px;
       @include flex(flex,null,null,column);
-      @include media-q(desktop) {
+      @include media-q(medium-devices) {
         @include flex(flex,null,center,row);
         }
     }
@@ -32,33 +32,33 @@
       margin:0;
       margin-right: 5px;
       margin-bottom: 10px;
-      @include media-q(desktop){
+      @include media-q(medium-devices){
         margin-bottom: 10px;
       }
     }
     &__links{
       @include flex(flex,null,null,row);
-      @include media-q(desktop){
+      @include media-q(medium-devices){
         margin: 0;
         flex-direction: row;
       }
     }
     &__links-icon ,&__links-iconless {
       @include flex(flex,null,null,column);
-      @include media-q (desktop) {
+      @include media-q (medium-devices) {
         flex-direction: row;
         margin-right: 5px;
         }
     }
     &__links-iconless {
       margin-top:-10px;
-      @include media-q (desktop) {
+      @include media-q (medium-devices) {
       margin-top:0px;
      }}
     &__icons {
       line-height: 17px;
       width: 16px;
-      @include media-q(desktop) {
+      @include media-q(medium-devices) {
         line-height: 18px;
         }
     }

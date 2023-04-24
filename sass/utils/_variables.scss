@@ -25,6 +25,7 @@ $tertiary-color: #99E2D0;
 
 $gradient-prim-color: #E872DA;
 $gradient-sec-color: #A55DDC;
+$gradient:linear-gradient(0deg, $primary-color  0%, $secondary-color 100%);
 
 // ** shadows colors**
  $shadow: rgb(194, 194, 194);
