@@ -1,8 +1,11 @@
     // **background colors**
-$bg-white:white;
-$bg-light-grey: #F6F6F6;
-$bg-grey :#EAEAEA;
-$bg-dark-grey: #353535;
+
+$bg-color: (
+    bg-white:white,
+    bg-light-grey: #F6F6F6,
+    bg-grey :#EAEAEA,
+    bg-dark-grey: #353535
+);
 
     // **components colors**
 
@@ -28,5 +31,5 @@ $gradient-sec-color: #A55DDC;
 $gradient:linear-gradient(0deg, $primary-color  0%, $secondary-color 100%);
 
 // ** shadows colors**
- $shadow: rgb(194, 194, 194);
+ $shadow: rgb(214, 214, 214);
 

@@ -1,3 +1,5 @@
+// **flex**
+
 @mixin flex($disp:flex,$j-c:center,$a-i:center,$f-d:row) {
     display:$disp;
     justify-content: $j-c;
@@ -5,12 +7,16 @@
     flex-direction:$f-d;
   }
 
-@mixin padding($pt:auto,$pr:auto,$pb:auto,$pl:auto) {
+  // **padding**
+
+@mixin padding($pt:0,$pr:0,$pb:0,$pl:0) {
     padding-top: $pt;
     padding-right: $pr;
     padding-bottom: $pb;
     padding-left: $pl;
 }
+
+// **media queries**
 
 @mixin media-q($size) {
   @if $size == medium-devices {
@@ -18,4 +24,21 @@
   } @else if $size == desktop {
     @media (min-width:1023px) { @content;}
   }
+}
+
+// **shadows**
+
+@function shadow-shift($background-clr: $bg-color, $darken-value: $shadow) {
+  @if (lightness($background-clr) == 100%) {
+      @return darken($darken-value, 0);
+
+    } @else if (lightness($background-clr) <25% ) {      
+      @return darken($darken-value, 20%);
+  }
+  
+}
+
+@mixin shadow-darkener($shadow-color: shadow-shift($shadow)){
+  color:$shadow;
+  filter: drop-shadow(0px 4px 4px ($shadow-color));
 }

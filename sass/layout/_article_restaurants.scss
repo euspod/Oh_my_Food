@@ -1,5 +1,5 @@
 .restaurants {
-    background-color: $bg-light-grey;
+    background-color: map-get($bg-color,bg-light-grey);
     padding-top:25px;
     color:black;
     &__container {
@@ -24,7 +24,7 @@
       padding-top: 10px;
     }
     &__card {
-      background-color:$bg-white;
+      background-color:map-get($bg-color,bg-white);
       border-radius: 20px;
       position: relative;
       width: 100%;
@@ -61,16 +61,7 @@
         margin-bottom: 10px;
         }
     } 
-    &__heart-icon-border, &__heart-icon-solid {
-      z-index:1;
-      position: absolute;
-      right:10px;
-      top:10px;
-      color:rgb(0, 0, 0);
-    }
-    &__heart-icon-solid {
-      color:rgb(255, 0, 0);
-    }    
+    
     &__label-new {
       background-color:$tertiary-color;
       width:69px;
@@ -83,8 +74,42 @@
       display:table-cell;
       text-align: center;
       line-height:26px;
-      filter: drop-shadow(0px 4px 4px #646464);
+      // @include shadow-darkener($shadow,40%);
+      &:hover {
+        // @include shadow-darkener($shadow,80%);
+      }
     }
-  }
+    
+    &__heart-icon-border,&__heart-icon-solid {
+      color:rgb(0, 0, 0);
+      top:10px;
+      z-index: 2;
+      position: absolute;
+      right:10px;
+      &.restaurants__heart-icon-solid{
+        z-index: 1;
+        background: $gradient;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-repeat: no-repeat;
+        // background-position: 19px;
+        transform: scale(0);
+        transition: transform 1000ms ease-in-out;
+        
+      }
+      &:hover + .restaurants__heart-icon-solid{
+        background: $gradient;
+        background-clip: text;
+        // background-position-y:0;
+        -webkit-text-fill-color: transparent;       
+        transform: scale(1) ;
+        }
+
+    }
+ }
   
 
+
+
+
+  

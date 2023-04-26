@@ -4,8 +4,8 @@
     &__logo-container {
         width:100%;
         height:50px;
-        background-color: $bg-white;
-        filter: drop-shadow(0px 4px 2px rgb(194, 194, 194));
+        background-color: map-get($bg-color,bg-white);
+        @include shadow-darkener(bg-white);
         @include flex(flex,center,null,null);
         position: relative;
       }
@@ -16,7 +16,7 @@
         bottom:10px;
       }
     &__location {
-        background-color: $bg-grey;
+        background-color: map-get($bg-color,bg-grey);
         height:50px;
         @include flex(flex,center,center,row);
         color:$typo-tertry-color;
@@ -29,7 +29,7 @@
       }
     &__nav {
       padding-bottom: 50px;
-      background-color:$bg-light-grey;
+      background-color:map-get($bg-color,bg-light-grey);
       @include media-q (medium-devices) {
         padding-bottom:30px;
       }
@@ -44,12 +44,15 @@
         }
     &__nav-button{
       margin:auto;
-      background: $gradient;
       border-radius: 20px;
       width:200px;
       height:45px;
+      background: $gradient;
       @include flex(flex,center,center,null);
-      filter: drop-shadow(0px 4px 5px #b1b1b1);
+      @include shadow-darkener(bg-grey);
+      &:hover {
+        @include shadow-darkener(bg-grey);
+      }
       @include media-q (desktop) {
         height: 39px;
       }

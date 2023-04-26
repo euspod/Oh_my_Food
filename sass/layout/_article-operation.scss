@@ -2,7 +2,7 @@
     margin:0;
     padding-top:25px;
     padding-bottom: 15px;
-    background-color: $bg-white;
+    background-color: map-get($bg-color,bg-white);
     &__container {
       width:90%;
       margin: auto;
@@ -28,26 +28,31 @@
           gap:20px;
         }
       }
-      &__card {
-        background-color: $bg-light-grey;
-        border-radius: 20px;
-        width: 85%;
-        height:65px;
-        filter: drop-shadow(0px 4px 4px #dddddd);
-        white-space: nowrap;
-        padding-left: 30px;
-        @include flex(flex,null,center,row);
-        @include media-q(medium-devices) {
-          height:53px;
-          width: 190px;
-        }
-        @include media-q(desktop) {
-          height:53px;
-          width: 218px;
+    &__card {
+      background-color: map-get($bg-color,bg-light-grey);
+      border-radius: 20px;
+      width: 85%;
+      height:65px;
+      white-space: nowrap;
+      padding-left: 30px;
+      // @include shadow-darkener($shadow,0);
+      @include flex(flex,null,center,row);
+      @include media-q(medium-devices) {
+        height:53px;
+        width: 190px;
+      }
+      @include media-q(desktop) {
+        height:53px;
+        width: 218px;
+      }
+      &:hover {
+        // @include shadow-darkener($shadow,20%);
+        & .operation__icon {
+          color:$primary-color;
         }
       }
+    }
     &__icon {
-        // padding-right: 19px;
         color:$icon-color;
         width:30px;
         margin-bottom: 2px;
