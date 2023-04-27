@@ -34,16 +34,23 @@
       @include media-q(desktop) {
         width:400px;
         }
-    }
+      }
+    & a {
+        &:hover {
+          box-shadow: 0px 4px 4px darken($sh-light-grey, 20%);
+        }
+      }
     &__card-thumb {
       border-radius: 15px 15px 0 0;
       width: 100%;
       height: 145px;
       object-fit:cover;
+      object-position: 50% 65%;
     }
     &__card-content {
       @include flex(flex,null,null,row);
       position: relative;
+      color:black;
     }
     &__card-text {
       flex-direction: column;
@@ -74,9 +81,11 @@
       display:table-cell;
       text-align: center;
       line-height:26px;
-      // @include shadow-darkener($shadow,40%);
+      box-shadow: 0px 2px 2px $sh-grey;
       &:hover {
-        // @include shadow-darkener($shadow,80%);
+        background-color: lighten($tertiary-color, 5%);
+        box-shadow: 0px 2px 2px darken($sh-grey, 20%);
+        color: lighten($typo-quatry-color, 5%);
       }
     }
     
@@ -94,7 +103,7 @@
         background-repeat: no-repeat;
         // background-position: 19px;
         transform: scale(0);
-        transition: transform 1000ms ease-in-out;
+        transition: transform 200ms ease-in-out;
         
       }
       &:hover + .restaurants__heart-icon-solid{

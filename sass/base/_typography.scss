@@ -42,7 +42,7 @@ body {
       font-size: 1em;}
   }
   &__card-title, &__icon {
-   font-size: 1em;
+   font-size: 0.9em;
    @include media-q(medium-devices) {
     font-size: 0.8em;
    }

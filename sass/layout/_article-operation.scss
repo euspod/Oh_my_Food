@@ -35,7 +35,7 @@
       height:65px;
       white-space: nowrap;
       padding-left: 30px;
-      // @include shadow-darkener($shadow,0);
+      filter: drop-shadow(0px 4px 4px $sh-white);
       @include flex(flex,null,center,row);
       @include media-q(medium-devices) {
         height:53px;
@@ -46,12 +46,19 @@
         width: 218px;
       }
       &:hover {
-        // @include shadow-darkener($shadow,20%);
+        background-color: lighten(map-get($bg-color,bg-light-grey),0.5%);
+        filter: drop-shadow(0px 4px 4px darken($sh-light-grey, 20%) );
         & .operation__icon {
           color:$primary-color;
         }
       }
     }
+    &__card-title, &__icon {
+      color:black;
+      &:hover {
+        color:$color-dark-grey;
+      }
+     }
     &__icon {
         color:$icon-color;
         width:30px;

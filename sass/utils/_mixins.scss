@@ -26,19 +26,21 @@
   }
 }
 
-// **shadows**
 
-@function shadow-shift($background-clr: $bg-color, $darken-value: $shadow) {
-  @if (lightness($background-clr) == 100%) {
-      @return darken($darken-value, 0);
-
-    } @else if (lightness($background-clr) <25% ) {      
-      @return darken($darken-value, 20%);
+@function shadowshift($shadow-color:$shadow,$backgd-clr:$bg-color) {
+  @each $color, $color-value in $bg-color {
+  @if (lightness($color) == 100%) {
+    @return $shadow-color;
+    
+  } @if (lightness($backgd-clr) < 20%) {
+    @return darken($shadow-color,20%);
   }
-  
+}}
+
+@mixin shadow-darkener($shadow-color:$shadow) {
+  filter:drop-shadow(0px 4px 4px shadowshift($shadow-color,$background-clr));
 }
 
-@mixin shadow-darkener($shadow-color: shadow-shift($shadow)){
-  color:$shadow;
-  filter: drop-shadow(0px 4px 4px ($shadow-color));
-}
+
+ 
+

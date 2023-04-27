@@ -43,7 +43,7 @@
         flex-direction: row;
       }
     }
-    &__links-icon ,&__links-iconless {
+    &__links-icon,&__links-iconless {
       @include flex(flex,null,null,column);
       @include media-q (medium-devices) {
         flex-direction: row;
