@@ -1,0 +1,54 @@
+
+
+.menu {
+    text-align: left;
+    &__container {
+        background-color: map-get($bg-color,bg-grey);
+        clip-path: inset(100% 100% round 2rem 2rem 0rem 0rem);
+        padding-top: 2px;
+        margin-top: -30px;
+        padding-left: 20px;
+        position: relative;
+    }
+    & h2 {
+        border-bottom: 2px solid $tertiary-color;
+        width:40px;
+    }
+    & h3, p {
+        margin: 0;
+    }
+    &__card-text {
+        @include flex(flex,null,null,column);
+
+      }
+    &__price {
+        top:10;
+        right:-78px;
+    }
+    &__heart-icon-border,&__heart-icon-solid {
+        color:rgb(0, 0, 0);
+        top:28px;
+        right:40px;
+        z-index: 2;
+        position: absolute;
+        transform: scale(1.2);
+        &.menu__heart-icon-solid{
+          z-index: 1;
+          background: $gradient;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-repeat: no-repeat;
+          transform: scale(0);
+          transition: transform 200ms ease-in-out;
+          
+        }
+        &:hover + .menu__heart-icon-solid{
+          background: $gradient;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;       
+          transform: scale(1);
+          }
+    
+      }
+  }
+  

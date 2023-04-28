@@ -1,6 +1,5 @@
 .header {
     text-align: center;
-
     &__logo-container {
         width:100%;
         height:50px;
@@ -42,22 +41,7 @@
             { display:none;}
           }
         }
-    &__nav-button{
-      margin:auto;
-      border-radius: 20px;
-      width:200px;
-      height:45px;
-      background: $gradient;
-      @include flex(flex,center,center,null);
-      filter: drop-shadow(0px 4px 4px $sh-light-grey);
-      &:hover {
-        filter: drop-shadow(0px 4px 4px darken($sh-light-grey, 20%));
-        background: linear-gradient(0deg, lighten($primary-color,5%)  0%, lighten($secondary-color,5%) 100%);
-      }
-      @include media-q (desktop) {
-        height: 39px;
-      }
-      }
+    
     // &__nav-button{
     //   margin:auto;
     //   border-radius: 20px;

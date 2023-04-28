@@ -1,4 +1,4 @@
-// **flex**
+       // **flex**
 
 @mixin flex($disp:flex,$j-c:center,$a-i:center,$f-d:row) {
     display:$disp;
@@ -7,7 +7,7 @@
     flex-direction:$f-d;
   }
 
-  // **padding**
+         // **padding**
 
 @mixin padding($pt:0,$pr:0,$pb:0,$pl:0) {
     padding-top: $pt;
@@ -16,7 +16,7 @@
     padding-left: $pl;
 }
 
-// **media queries**
+       // **media queries**
 
 @mixin media-q($size) {
   @if $size == medium-devices {
@@ -26,6 +26,7 @@
   }
 }
 
+       // **solor-shift**
 
 @function shadowshift($shadow-color:$shadow,$backgd-clr:$bg-color) {
   @each $color, $color-value in $bg-color {
@@ -40,6 +41,73 @@
 @mixin shadow-darkener($shadow-color:$shadow) {
   filter:drop-shadow(0px 4px 4px shadowshift($shadow-color,$background-clr));
 }
+
+       // **buttons**
+       
+
+@mixin cta-button($butt-categories) {
+  @each $section, $butt-category in $butt-categories {
+    &__#{$section} {
+      margin:auto;
+      border-radius: 20px;
+      width:200px;
+      height:45px;
+      background: $gradient;
+      @include flex(flex,center,center,null);
+      filter: drop-shadow(0px 4px 4px $sh-light-grey);
+      &:hover {
+      filter: drop-shadow(0px 4px 4px darken($sh-light-grey, 20%));
+      background: linear-gradient(0deg, lighten($primary-color,5%)  0%, lighten($secondary-color,5%) 100%);
+      }
+      @include media-q (desktop) {
+      height: 39px;
+      }
+    }
+  }
+}
+
+       // **cards**
+@mixin card($card-categories) {
+  @each $section, $card-category in $card-categories {
+       &__#{$section} {
+        background-color: map-get($bg-color,bg-light-grey);
+        border-radius: 20px;
+        width: 85%;
+        height:65px;
+        white-space: nowrap;
+        padding-left: 30px;
+        filter: drop-shadow(0px 4px 4px $sh-white);
+        @include flex(flex,null,center,row);
+        @include media-q(medium-devices) {
+          height:53px;
+          width: 190px;
+        }
+        @include media-q(desktop) {
+          height:53px;
+          width: 218px;
+        }
+        &:hover {
+          background-color: lighten(map-get($bg-color,bg-light-grey),0.5%);
+          filter: drop-shadow(0px 4px 4px darken($sh-light-grey, 20%) );
+          & .operation__icon {
+            color:$primary-color;
+          }
+        }
+      }
+    }
+  }
+
+
+
+
+
+
+
+      
+  
+
+
+
 
 
  

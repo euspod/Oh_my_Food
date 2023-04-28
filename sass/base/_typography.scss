@@ -120,7 +120,25 @@ body {
   }
 }
 
+.menu {
+  & h1 {
+    font-family: 'Shrikhand', cursive;
+    font-size: 1.35em;
+  }
+  & h2{
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.85em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+  & h3 {
+    font-size: 1em;
+}
+  &__card-paragraph {
+    font-size: 0.8em;
+  }
 
+}
 
 
 
