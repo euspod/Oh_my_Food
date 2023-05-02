@@ -28,6 +28,16 @@
       border-radius: 20px;
       position: relative;
       width: 100%;
+      &:hover {
+        & .restaurants__label-new {
+          background-color: lighten($tertiary-color, 5%);
+          box-shadow: 0px 2px 2px darken($sh-grey, 20%);
+          color: lighten($typo-quatry-color, 5%);
+        }
+      &:hover .restaurants__card-thumb {
+        opacity:80%;
+      }
+      }
       @include media-q(medium-devices) {
         width: 288px;
         }
@@ -82,11 +92,6 @@
       text-align: center;
       line-height:26px;
       box-shadow: 0px 2px 2px $sh-grey;
-      &:hover {
-        background-color: lighten($tertiary-color, 5%);
-        box-shadow: 0px 2px 2px darken($sh-grey, 20%);
-        color: lighten($typo-quatry-color, 5%);
-      }
     }
     
     &__heart-icon-border,&__heart-icon-solid {

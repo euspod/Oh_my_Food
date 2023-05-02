@@ -46,6 +46,7 @@
     &__links-icon,&__links-iconless {
       @include flex(flex,null,null,column);
       @include media-q (medium-devices) {
+        gap: 10px;
         flex-direction: row;
         margin-right: 5px;
         }

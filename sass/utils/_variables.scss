@@ -8,14 +8,16 @@ $bg-color: (
 );
     // **shadow-color**
 
-    $sh-white: #ccc;
-    $sh-light-grey: #c2c2c2;
-    $sh-grey : #b8b8b8;
+$sh-white: #ccc;
+$sh-light-grey: #c2c2c2;
+$sh-grey : #b8b8b8;
+
 
 
     // **components colors**
 
 $dot-color:#9356DC;
+$dot-color-hover:#be9aea;
 
 $icon-color:#999999;
 
@@ -46,7 +48,6 @@ $gradient:linear-gradient(0deg, $primary-color  0%, $secondary-color 100%);
 
 
 // $card-categories:(operation, retaurants);
-
 
 
 

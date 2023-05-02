@@ -29,16 +29,19 @@
           gap:20px;
         }
       }
-    &__card-title, &__icon {
-      color:black;
-      &:hover {
+    &__card {
+      &:hover .operation__card-title {
         color:$color-dark-grey;
       }
-     }
+      &:hover .operation__dot {
+        background-color:$dot-color-hover;
+      }
+    }
     &__icon {
         color:$icon-color;
         width:30px;
         margin-bottom: 2px;
+        padding-left: 30px;
         @include media-q(medium-devices){
           margin-bottom: 0;
         }
