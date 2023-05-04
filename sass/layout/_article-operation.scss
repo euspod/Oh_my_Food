@@ -21,7 +21,7 @@
         gap:20px;
         padding-bottom: 50px;
         @include media-q(medium-devices) {
-          @include flex(flex,null,null,row);
+          @include flex(flex,center,null,row);
           height:53px; 
         }
         @include media-q(desktop){

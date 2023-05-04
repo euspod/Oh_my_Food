@@ -106,7 +106,6 @@
         background-clip: text;
         -webkit-text-fill-color: transparent;
         background-repeat: no-repeat;
-        // background-position: 19px;
         transform: scale(0);
         transition: transform 200ms ease-in-out;
         
@@ -114,7 +113,6 @@
       &:hover + .restaurants__heart-icon-solid{
         background: $gradient;
         background-clip: text;
-        // background-position-y:0;
         -webkit-text-fill-color: transparent;       
         transform: scale(1) ;
         }

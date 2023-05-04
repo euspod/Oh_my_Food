@@ -42,6 +42,9 @@
         margin: 0;
         flex-direction: row;
       }
+      &:hover {
+        text-decoration: underline;
+      }
     }
     &__links-icon,&__links-iconless {
       @include flex(flex,null,null,column);
