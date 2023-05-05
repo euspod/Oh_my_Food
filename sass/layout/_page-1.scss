@@ -2,7 +2,7 @@
 
 .menu {
     background-color: map-get($bg-color,bg-grey);
-    clip-path: inset(100% 100% round 2rem 2rem 0rem 0rem);
+    -webkit-clip-path: inset(0 0 0 0 round 4% 4% 0 0);
     padding-top: 2px;
     padding-bottom: 30px;
     margin-top: -30px;
@@ -28,6 +28,19 @@
             width:70%;
         }
     }
+    &__dishes {
+        animation: menu-load $menu-load-duration;
+        transform-origin: 0 0;
+        @for $i from 1 through $num-menus {
+            &--#{$i} {
+                animation-delay: $menu-load-delay * $i;
+            }
+        }
+    }
+    & h2, .menu__card-text, .menu__price, .menu__slide {
+        @extend .reveal-text ;
+    }
+
     &__cards {
         margin-bottom: 30px;
         display: flex;
@@ -43,14 +56,9 @@
         @include media-q(medium-devices) {
             width: 100%;
         }
-        &:hover .menu__slide, &:hover .menu__price {
-            transform: translateX(-50px);
-        }
-        &:hover .menu__card-text {
-            width:10em;
-            @include media-q(medium-devices) {
-                width:40em;
-        } }
+        &:hover > .menu__slide{
+                width:50px;
+            }
     }
     
     &__heading {
@@ -65,48 +73,47 @@
     }
     &__card-text {
         padding-left: 10px;
-        width: 15em; 
+        flex-grow: 1;
+        width: 200px;
         transition: all 400ms;
-        @include flex(flex,null,null,column);
-        // width:100px;
-        
+        @include flex(flex,null,null,column);   
       }
     &__card-heading, &__card-paragraph {
-        
         overflow: hidden;
         text-overflow: ellipsis; 
-        
+        white-space: nowrap;
     }
     &__price {
-        position: absolute;
-        right:10px;
-        top:33px;
+        padding-top: 19px;
+        padding-right: 5px;
         transform: translateX(0);
         transition: transform 400ms ease-in-out;
     }
     &__slide {
-        height:65px;
-        width:50px;
-        right:-50px;
-        position: absolute;
+        display: flex;
+        margin:auto;
+        height:100%;
+        width: 0;
         background-color: $tertiary-color;
         background-clip: border-box;
-        transform: translateX(0px);
-        transition: transform 400ms ease-in-out;
+        transform-origin: 0 0 ;
+        transition: 400ms ease-in-out;
+        position: relative;
     }
 
-    &__circle, &__check {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%,-50%);
+    &__circle, .menu__check {
+        margin: auto;
         color:white;
-        &.menu__check{
-            color: $tertiary-color;
-            z-index:1;
-        }
-
+        position: absolute;
+        top: 41%;
+        left: 35%;
+        + .menu__check {
+        transform: scale(0.8);
+        color: $tertiary-color;
+        z-index: 1;
+     }
     }
+
  
     &__heart-icon-border,&__heart-icon-solid {
         color:rgb(0, 0, 0);
