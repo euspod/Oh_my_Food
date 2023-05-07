@@ -18,6 +18,33 @@
   animation: text-load 1s 1.3s both;
 }
 
+@keyframes main-loading {
+  0% {
+    opacity: 1;
+  }
+  98%, 100% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes elements-loading {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+.elements-loader-anim, .main-loader__heading, .main-loader__bars, .main-loader__footer {
+  transform: scaleX(0);
+  animation: elements-loading 1000ms infinite;
+  transform-origin: 0 0;
+}
+
 body {
   font-family: "Roboto", sans-serif;
 }
@@ -193,6 +220,33 @@ body a {
   animation: text-load 1s 1.3s both;
 }
 
+@keyframes main-loading {
+  0% {
+    opacity: 1;
+  }
+  98%, 100% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes elements-loading {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+.elements-loader-anim, .main-loader__heading, .main-loader__bars, .main-loader__footer {
+  transform: scaleX(0);
+  animation: elements-loading 1000ms infinite;
+  transform-origin: 0 0;
+}
+
 .menu__cta-button, .header__cta-button {
   margin: auto;
   border-radius: 20px;
@@ -241,6 +295,60 @@ body a {
 }
 .menu__card:hover .operation__icon, .operation__card:hover .operation__icon {
   color: #9356DC;
+}
+
+.main-loader {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+  width: 100%;
+  background-color: rgb(238, 238, 238);
+  inset: 0;
+  z-index: 3;
+  animation: main-loading 3000ms forwards;
+}
+.main-loader__bg {
+  position: absolute;
+  top: 7%;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  height: 200px;
+  background-color: #F6F6F6;
+}
+.main-loader__heading {
+  border-radius: 5px;
+  width: 80px;
+  height: 20px;
+  background-color: #9356DC;
+  margin: auto;
+  margin-top: 5px;
+  animation-delay: 200ms;
+}
+.main-loader__bars {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5em;
+  margin-bottom: 15px;
+  animation-delay: 400ms;
+}
+.main-loader__bar {
+  border-radius: 5px;
+  width: 100px;
+  height: 10px;
+  background-color: #FF79DA;
+}
+.main-loader__footer {
+  border-radius: 5px;
+  width: 100px;
+  height: 20px;
+  background-color: #99E2D0;
+  margin-bottom: 10px;
+  animation-delay: 600ms;
 }
 
 .header__logo-container {

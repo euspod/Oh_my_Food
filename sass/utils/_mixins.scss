@@ -96,10 +96,11 @@
     }
   }
 
-  
+  // restaurants page anim
+
 $menu-load-duration: 600ms;
 $num-menus:3;
-$menu-load-delay: $menu-load-duration / $num-menus;
+$menu-load-delay: calc($menu-load-duration / $num-menus);
 
   @keyframes menu-load {
     from {
@@ -125,8 +126,40 @@ $menu-load-delay: $menu-load-duration / $num-menus;
   animation: text-load 1s 1.3s both ;  
 }
 
+// main-loader anim
 
+@keyframes main-loading {
+  0% {
+    opacity:1;
+  }
+  98%,100% {
+    opacity:1;
+  }
+ 
+  100% {
+    opacity:0;
+  }
+}
 
+@keyframes elements-loading {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(1);
+    opacity:1;
+  }
+}
+
+$main-loader-duration: 3000ms;
+$elements-loading-duration:1000ms;
+
+.elements-loader-anim {
+  transform: scaleX(0);
+  animation: elements-loading $elements-loading-duration infinite ;
+  transform-origin: 0 0;
+}
 
 
 

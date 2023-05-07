@@ -1,0 +1,61 @@
+
+.main-loader {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    width:100%;
+    background-color: rgb(238, 238, 238);
+    inset:0;
+    z-index: 3;
+    animation: main-loading $main-loader-duration forwards;
+    &__bg {
+        position:absolute;
+        top:7%;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 150px;
+        height: 200px;
+        background-color: map-get($bg-color,bg-light-grey );
+    }
+    &__heading {
+        border-radius: 5px;
+        width: 80px;
+        height: 20px;
+        background-color: $primary-color;
+        margin: auto;
+        margin-top:5px;
+        animation-delay: 200ms;
+        }
+    &__bars{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 0.5em;
+        margin-bottom:15px;
+        animation-delay: 400ms;
+    }
+    &__bar {
+        border-radius: 5px;
+        width: 100px;
+        height: 10px;
+        background-color: $secondary-color;
+    }
+    &__footer {
+        border-radius: 5px;
+        width: 100px;
+        height: 20px;
+        background-color: $tertiary-color;
+        margin-bottom: 10px;
+        animation-delay: 600ms;
+        }
+    }
+    .main-loader__heading,.main-loader__bars,.main-loader__footer {
+    @extend .elements-loader-anim;
+    }
+
+
+  
+  
