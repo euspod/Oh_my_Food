@@ -30,6 +30,7 @@
         }
       }
     &__card {
+      transition-duration: 300ms;
       &:hover .operation__card-title {
         color:$color-dark-grey;
       }

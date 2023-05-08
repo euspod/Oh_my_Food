@@ -114,7 +114,6 @@
      }
     }
 
- 
     &__heart-icon-border,&__heart-icon-solid {
         color:rgb(0, 0, 0);
         padding-left: 10px;
@@ -133,12 +132,18 @@
             transform-origin: 20px 15px;
         }
         &:hover + .menu__heart-icon-solid{
-          background: $gradient;
-          background-clip: text;
-          -webkit-text-fill-color: transparent;       
-          transform: scale(1);
-          }
-    
+            background: $gradient;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;       
+            transform: scale(0.9) ;
+            }
+    }
+      &__heart-icon-border {
+        opacity:1;
+        transition-duration: 300ms;
+        &:hover {
+          opacity:0;
+        }
       }
   }
 

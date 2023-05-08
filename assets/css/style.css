@@ -27,6 +27,8 @@
   }
   100% {
     opacity: 0;
+    visibility: hidden;
+    display: none;
   }
 }
 @keyframes elements-loading {
@@ -229,6 +231,8 @@ body a {
   }
   100% {
     opacity: 0;
+    visibility: hidden;
+    display: none;
   }
 }
 @keyframes elements-loading {
@@ -257,6 +261,7 @@ body a {
   justify-content: center;
   align-items: center;
   filter: drop-shadow(0px 4px 4px #c2c2c2);
+  transition-duration: 300ms;
 }
 .menu__cta-button:hover, .header__cta-button:hover {
   filter: drop-shadow(0px 4px 4px #8f8f8f);
@@ -318,6 +323,11 @@ body a {
   width: 150px;
   height: 200px;
   background-color: #F6F6F6;
+}
+@media (min-width: 767px) {
+  .main-loader__bg {
+    top: 10%;
+  }
 }
 .main-loader__heading {
   border-radius: 5px;
@@ -501,6 +511,9 @@ body .main-container {
     gap: 20px;
   }
 }
+.operation__card {
+  transition-duration: 300ms;
+}
 .operation__card:hover .operation__card-title {
   color: rgb(86, 86, 86);
 }
@@ -575,13 +588,14 @@ body .main-container {
   border-radius: 20px;
   position: relative;
   width: 100%;
+  transition: 300ms;
 }
 .restaurants__card:hover .restaurants__label-new {
   background-color: #ade8d9;
   box-shadow: 0px 2px 2px #858585;
   color: #00a179;
 }
-.restaurants__card:hover:hover .restaurants__card-thumb {
+.restaurants__card:hover .restaurants__card-thumb {
   opacity: 80%;
 }
 @media (min-width: 767px) {
@@ -594,6 +608,9 @@ body .main-container {
     width: 400px;
   }
 }
+.restaurants a {
+  transition-duration: 300ms;
+}
 .restaurants a:hover {
   box-shadow: 0px 4px 4px #8f8f8f;
 }
@@ -603,6 +620,8 @@ body .main-container {
   height: 145px;
   object-fit: cover;
   object-position: 50% 65%;
+  opacity: 100%;
+  transition-duration: 300ms;
 }
 .restaurants__card-content {
   display: flex;
@@ -663,6 +682,13 @@ body .main-container {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   transform: scale(1);
+}
+.restaurants__heart-icon-border {
+  opacity: 1;
+  transition-duration: 30ms;
+}
+.restaurants__heart-icon-border:hover {
+  opacity: 0;
 }
 
 .footer {
@@ -910,7 +936,14 @@ body .main-container {
   background: linear-gradient(0deg, #9356DC 0%, #FF79DA 100%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  transform: scale(1);
+  transform: scale(0.9);
+}
+.menu__heart-icon-border {
+  opacity: 1;
+  transition-duration: 300ms;
+}
+.menu__heart-icon-border:hover {
+  opacity: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -10,6 +10,9 @@
     z-index: 3;
     animation: main-loading $main-loader-duration forwards;
     &__bg {
+        @include media-q(medium-devices) {
+            top:10%;
+        }
         position:absolute;
         top:7%;
         border-radius: 15px;

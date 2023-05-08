@@ -28,15 +28,16 @@
       border-radius: 20px;
       position: relative;
       width: 100%;
+      transition: 300ms;
       &:hover {
         & .restaurants__label-new {
           background-color: lighten($tertiary-color, 5%);
           box-shadow: 0px 2px 2px darken($sh-grey, 20%);
           color: lighten($typo-quatry-color, 5%);
         }
-      &:hover .restaurants__card-thumb {
-        opacity:80%;
-      }
+        & .restaurants__card-thumb {
+          opacity:80%;
+        }
       }
       @include media-q(medium-devices) {
         width: 288px;
@@ -46,6 +47,7 @@
         }
       }
     & a {
+      transition-duration: 300ms;
         &:hover {
           box-shadow: 0px 4px 4px darken($sh-light-grey, 20%);
         }
@@ -56,6 +58,8 @@
       height: 145px;
       object-fit:cover;
       object-position: 50% 65%;
+      opacity:100%;
+      transition-duration: 300ms;
     }
     &__card-content {
       @include flex(flex,null,null,row);
@@ -108,7 +112,6 @@
         background-repeat: no-repeat;
         transform: scale(0);
         transition: transform 200ms ease-in-out;
-        
       }
       &:hover + .restaurants__heart-icon-solid{
         background: $gradient;
@@ -116,7 +119,13 @@
         -webkit-text-fill-color: transparent;       
         transform: scale(1) ;
         }
-
+    }
+    &__heart-icon-border {
+      opacity:1;
+      transition-duration: 30ms;
+      &:hover {
+        opacity:0;
+      }
     }
  }
   
