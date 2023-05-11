@@ -10,18 +10,21 @@
     z-index: 3;
     animation: main-loading $main-loader-duration forwards;
     &__bg {
-        @include media-q(medium-devices) {
-            top:10%;
-        }
         position:absolute;
-        top:7%;
+        top:15%;
         border-radius: 15px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 150px;
-        height: 200px;
+        width: 250px;
+        height: 350px;
         background-color: map-get($bg-color,bg-light-grey );
+        @include media-q(medium-devices) {
+            top:30%;
+        }
+        @include media-q(desktop) {
+            top:20%;
+        }
     }
     &__heading {
         border-radius: 5px;
@@ -29,7 +32,7 @@
         height: 20px;
         background-color: $primary-color;
         margin: auto;
-        margin-top:5px;
+        margin-top:30px;
         animation-delay: 200ms;
         }
     &__bars{
@@ -37,21 +40,25 @@
         align-items: center;
         flex-direction: column;
         gap: 0.5em;
-        margin-bottom:15px;
-        animation-delay: 400ms;
+        margin-bottom:30px;
+        @for $i from 1 through 3 {
+            &--#{$i} {
+                animation-delay: 100ms * $i;
+            }
+         }
     }
     &__bar {
         border-radius: 5px;
-        width: 100px;
+        width: 150px;
         height: 10px;
         background-color: $secondary-color;
     }
     &__footer {
         border-radius: 5px;
-        width: 100px;
+        width: 150px;
         height: 20px;
         background-color: $tertiary-color;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
         animation-delay: 600ms;
         }
     }

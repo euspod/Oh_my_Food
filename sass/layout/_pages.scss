@@ -2,10 +2,10 @@
 
 .menu {
     background-color: map-get($bg-color,bg-grey);
-    -webkit-clip-path: inset(0 0 0 0 round 4% 4% 0 0);
+    -webkit-clip-path: inset(0 0 0 0 round 40px 40px 0 0);
     padding-top: 2px;
     padding-bottom: 30px;
-    margin-top: -30px;
+    margin-top: -40px;
     position: relative;
     width: auto;
     @include media-q(medium-devices) {
@@ -17,10 +17,14 @@
         position: absolute;
         color:black;
         left:20px;
-        &:hover {
-            color:$color-dark-grey;
-        }
+        opacity:1;
+        z-index: 1;
+        transition: 300ms ease-in-out;
+        &:hover { 
+        opacity:0.6;
+        }      
     }
+
     &__container {
         width:90%;
         margin: auto;
@@ -124,28 +128,28 @@
         &.menu__heart-icon-solid{
             z-index: 1;
             background: $gradient;
-            background-clip: text;
+            -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-repeat: no-repeat;
             transform: scale(0);
             transition: transform 200ms ease-in-out;
             transform-origin: 20px 15px;
         }
-        &:hover + .menu__heart-icon-solid{
-            background: $gradient;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;       
+        &:hover + .menu__heart-icon-solid{  
             transform: scale(0.9) ;
             }
     }
       &__heart-icon-border {
         opacity:1;
-        transition-duration: 300ms;
+        transition: 300ms 200ms;
         &:hover {
           opacity:0;
         }
       }
   }
+
+
+
 
 
   

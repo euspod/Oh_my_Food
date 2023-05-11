@@ -101,9 +101,9 @@
     &__heart-icon-border,&__heart-icon-solid {
       color:rgb(0, 0, 0);
       top:10px;
+      right:10px;
       z-index: 2;
       position: absolute;
-      right:10px;
       &.restaurants__heart-icon-solid{
         z-index: 1;
         background: $gradient;
@@ -113,16 +113,13 @@
         transform: scale(0);
         transition: transform 200ms ease-in-out;
       }
-      &:hover + .restaurants__heart-icon-solid{
-        background: $gradient;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;       
-        transform: scale(1) ;
+      &:hover + .restaurants__heart-icon-solid{     
+        transform: scale(0.9) ;
         }
     }
     &__heart-icon-border {
       opacity:1;
-      transition-duration: 30ms;
+      transition: 300ms 200ms;
       &:hover {
         opacity:0;
       }

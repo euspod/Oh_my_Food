@@ -63,11 +63,11 @@
         filter: drop-shadow(0px 4px 4px $sh-white);
         @include flex(flex,null,center,row);
         @include media-q(medium-devices) {
-          // height:53px;
+          height:53px;
           width: 30%;
         }
         @include media-q(desktop) {
-          // height:53px;
+          height:53px;
           width: 250px;
         }
         &:hover {
